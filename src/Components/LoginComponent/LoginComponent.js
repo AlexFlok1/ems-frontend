@@ -33,7 +33,7 @@ const LoginComponent = () => {
         <>
             <Grid container className="c-flex" style={ { height: '100vh', background: '#edf7fc' } }>
                 <Grid item xl={4} lg={4} md={5} sm={7} xs={10} className="c-flex">
-                    <img src="mueller.png"  style={ { height: '10rem' } } />
+                    {/*<img src="mueller.png"  style={ { height: '10rem' } } />*/}
                     <br/>
                     <Typography variant="h2">
                         WELCOME TO EMS

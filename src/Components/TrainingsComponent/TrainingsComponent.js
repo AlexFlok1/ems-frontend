@@ -5,7 +5,7 @@ import './TrainingsComponent.css'
 
 const TrainingsComponent = () => {
 
-    const [ departments, setDepartments ] = useState( [ 'Rubbermold', 'Repair Clamp', 'Meter Pit', 'Ser Saddles', 'Tapping Sleeves', 'IWT', 'ICB', 'Yokes' ] )
+    const [ departments, setDepartments ] = useState( [ "Department 1", "Department 2","Department 3" ] )
     const [ trainings, setTrainings ] = useState([])
 
     // this method will pull all trainigs related to selected department
@@ -23,6 +23,11 @@ const TrainingsComponent = () => {
             }
         ] )
 
+    }
+
+    //this method will bring back the department list
+    const goBackToDepList = async () => {
+        setTrainings( [] )
     }
 
     useEffect( () => {}, [] )
@@ -48,6 +53,18 @@ const TrainingsComponent = () => {
                 trainings.length > 0 && <Grid container style={ { height:'100vh', justifyContent: 'center', alignItems: 'center', display: 'flex' } } >
 
                     <Grid item lg={5} xl={5} md={6} sm={6} xs={12}>
+
+                           <Grid container justifyContent="center">
+
+                                <Grid item xs={11}>
+                                    <Button variant="contained" style={ { color: 'white', background: '#93c6ed', float: 'left', padding: '15px 10px' } }>Add Training</Button>
+                                    <Button color="default" variant="contained" style={ { padding: '15px 10px', float: 'right' } } onClick={ goBackToDepList }>Go Back</Button>
+                                </Grid>
+
+                           </Grid>
+
+                            <hr />
+                            <br />
 
                             {
                                 trainings.length > 0 &&  trainings.map( ( tr, index ) => (
